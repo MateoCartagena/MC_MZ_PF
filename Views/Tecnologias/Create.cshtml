@@ -1,0 +1,43 @@
+﻿@model ProyectoFinal_Cartagena_Zumarraga.Models.Tecnologia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tecnologia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AsuntoTec" class="control-label"></label>
+                <input asp-for="AsuntoTec" class="form-control" />
+                <span asp-validation-for="AsuntoTec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CuerpoTec" class="control-label"></label>
+                <input asp-for="CuerpoTec" class="form-control" />
+                <span asp-validation-for="CuerpoTec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaTec" class="control-label"></label>
+                <input asp-for="FechaTec" class="form-control" />
+                <span asp-validation-for="FechaTec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

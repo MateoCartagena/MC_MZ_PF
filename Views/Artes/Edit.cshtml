@@ -1,0 +1,44 @@
+﻿@model ProyectoFinal_Cartagena_Zumarraga.Models.Arte
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Arte</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AsuntoArt" class="control-label"></label>
+                <input asp-for="AsuntoArt" class="form-control" />
+                <span asp-validation-for="AsuntoArt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CuerpoArt" class="control-label"></label>
+                <input asp-for="CuerpoArt" class="form-control" />
+                <span asp-validation-for="CuerpoArt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaArt" class="control-label"></label>
+                <input asp-for="FechaArt" class="form-control" />
+                <span asp-validation-for="FechaArt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
